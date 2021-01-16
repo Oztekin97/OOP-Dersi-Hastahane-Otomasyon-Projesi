@@ -116,8 +116,10 @@ public class HastaGUI extends JFrame implements IExit {
 		JButton btnNewButton = new JButton("Çıkış Yap");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			    HastaYetki hb=new HastaYetki();
-				String uyar="Sayın "+ hasta.getName() + hb.loginMsg();
+				UserYetkiBilgilendirme uyb; //pointer
+			    HastaYetki hy=new HastaYetki();
+			    uyb=hy;
+				String uyar="Sayın "+ hasta.getName() + uyb.loginMsg();
 				JOptionPane.showMessageDialog(null, uyar, "Bilgilendirme", JOptionPane.INFORMATION_MESSAGE);
 				String son="Sağlıklı günler dileriz "+hasta.getName()+" randevunuzdan en az 15 dk önce giriş yaptırmalısınız.";
 				JOptionPane.showMessageDialog(null, son, "Uyarı", JOptionPane.INFORMATION_MESSAGE);

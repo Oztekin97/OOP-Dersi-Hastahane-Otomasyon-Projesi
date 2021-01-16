@@ -136,8 +136,10 @@ public class BashekimGUI extends JFrame {
 		JButton btnNewButton = new JButton("Çıkış Yap");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				UserYetkiBilgilendirme uyb; //pointer
 				BashekimYetki by=new BashekimYetki();
-				String uyar="Sayın Dr. "+ bashekim.getName() + by.loginMsg();
+				uyb=by;
+				String uyar="Sayın Dr. "+ bashekim.getName() + uyb.loginMsg();
 				JOptionPane.showMessageDialog(null, uyar, "Bilgilendirme", JOptionPane.INFORMATION_MESSAGE);
 				String son="Sağlıklı günler dileriz sayın Dr. "+bashekim.getName();
 				JOptionPane.showMessageDialog(null, son, "Mesaj", JOptionPane.INFORMATION_MESSAGE);

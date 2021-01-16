@@ -81,8 +81,10 @@ public class DoctorGUI extends JFrame implements IExit {
 		JButton btnNewButton = new JButton("Çıkış Yap");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				UserYetkiBilgilendirme uyb;
 				DoktorYetki dy=new DoktorYetki();
-				String uyar="Sayın Dr. "+ doctor.getName() + dy.loginMsg();
+				uyb=dy;
+				String uyar="Sayın Dr. "+ doctor.getName() + uyb.loginMsg();
 				JOptionPane.showMessageDialog(null, uyar, "Bilgilendirme", JOptionPane.INFORMATION_MESSAGE);
 				String son="Sağlıklı günler dileriz sayın Dr. "+doctor.getName();
 				JOptionPane.showMessageDialog(null, son, "Mesaj", JOptionPane.INFORMATION_MESSAGE);
